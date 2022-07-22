@@ -1,0 +1,24 @@
+server:
+  port: 9001
+
+eureka:
+  instance:
+    hostname: eureka9001.com #eureka服务端的实例名称
+  server:
+    #自我保护机制
+    enable-self-preservation: false
+    #自我保护触发的阈值
+    renewal-percent-threshold: 0.85
+    eviction-interval-timer-in-ms: 1000
+    #多级缓存  register --> readWriteMap -定时-> readOnlyMap
+    #Map<服务名,map<实例id,实例信息>>
+    # com.netflix.eureka.resources.ApplicationResource.addInstance
+    use-read-only-response-cache: false
+  client:
+    #false表示不向注册中心注册自己。
+    register-with-eureka: false
+    #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    fetch-registry: false
+    service-url:
+      #单体Eureka
+      defaultZone: http://localhost:9001/eureka/

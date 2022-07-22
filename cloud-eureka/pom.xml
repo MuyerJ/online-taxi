@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>api-passenger</artifactId>
+    <artifactId>cloud-eureka</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -17,13 +17,11 @@
     </properties>
 
     <dependencies>
-        <!--eureka-client-->
+        <!--eureka-server-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-
-
         <!--boot web actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,7 +45,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-
     </dependencies>
 
 </project>
